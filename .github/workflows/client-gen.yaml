@@ -1,0 +1,15 @@
+name: Validate and Generate API Clients
+
+on:
+  workflow_dispatch:
+    inputs: {}
+
+jobs:
+  validateSpecs:
+    name: Validate OpenAPI Specs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            console.log("Validate OpenAPI specs has been trigged. Hurray!")
