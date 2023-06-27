@@ -2,7 +2,18 @@ name: Validate and Generate API Clients
 
 on:
   workflow_dispatch:
-    inputs: {}
+    inputs:
+      repo:
+        description: "Source repository of the specs, format: OWNER/repo e.g. AdeThorMiwa/specs"
+        required: true
+      ref:
+        description: "Source branch to import from"
+        required: false
+        default: main
+      paths:
+        description: "Paths in the repo to import from, comma-separated"
+        type: string
+        required: true
 
 jobs:
   validateSpecs:
